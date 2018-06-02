@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#welcome'
+  resources :articles
+  resources :journalists
+  root 'journalists#index'
 end
