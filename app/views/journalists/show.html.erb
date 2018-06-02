@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First:</strong>
+  <%= @journalist.first %>
+</p>
+
+<p>
+  <strong>Last:</strong>
+  <%= @journalist.last %>
+</p>
+
+<%= link_to 'Edit', edit_journalist_path(@journalist) %> |
+<%= link_to 'Back', journalists_path %>
