@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :articles
   resources :journalists
-  root 'journalists#index'
+
+  root 'dashboard#index'
+
+  get 'dashboard' => 'dashboard#index'
 end

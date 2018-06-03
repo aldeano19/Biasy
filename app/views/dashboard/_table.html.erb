@@ -1,0 +1,19 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @journalists.each do |j| %>
+<!--  TODO: Whats the best way to set an onclick here to redirect to a details page-->
+      <tr onclick="window.location = '/journalists/<%= j.id %>'">
+        <td><%= "#{j.first} #{j.last}"%></td>
+        <td><%= j.articles.length %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

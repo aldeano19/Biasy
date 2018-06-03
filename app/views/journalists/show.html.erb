@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First:</strong>
-  <%= @journalist.first %>
+  <strong>Name:</strong>
+  <%= "#{@journalist.first} #{@journalist.last}"%>
+
+  <strong style="padding-left: 10em;">Count:</strong>
+  <%= "#{@journalist.articles.length}" %>
 </p>
 
-<p>
-  <strong>Last:</strong>
-  <%= @journalist.last %>
-</p>
+<% @journalist.articles.each do |article| %>
+
+  <p>
+    <%= "#{article.created_at.strftime("%Y-%m-%d")}:"; %>
+    <%= link_to(article.link, article.link, method: :get) %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_journalist_path(@journalist) %> |
 <%= link_to 'Back', journalists_path %>
