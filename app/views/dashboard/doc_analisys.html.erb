@@ -1,0 +1,13 @@
+<% @docs.each do |doc| %>
+
+  <h3><%= doc[:title] %></h3>
+
+  <ul>
+    <p>count &nbsp; <strong>subject</strong> &nbsp; sentiment</p>
+    <% doc[:entities].each do |element| %>
+      <li><%= element[:count] %> &nbsp; <strong><%= element[:subject] %></strong> &nbsp; <%= element[:sentiment] %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
