@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get 'dashboard' => 'dashboard#index'
 
-  get 'analisys' => 'dashboard#doc_collection_analisys'
+  get 'analysis' => 'dashboard#doc_collection_analysis'
 end

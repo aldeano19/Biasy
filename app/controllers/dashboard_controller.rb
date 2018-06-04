@@ -9,15 +9,15 @@ class DashboardController < ApplicationController
     @journalists = Journalist.all
   end
 
-  def doc_collection_analisys
+  def doc_collection_analysis
 
     out = ""
 
-    analisys = JSON.parse(WatsonHelper.query_articles_collection)
+    analysis = JSON.parse(WatsonHelper.query_articles_collection)
 
     @docs = Array.new
 
-    analisys['results'].each do |document|
+    analysis['results'].each do |document|
 
       new_doc = {}
 
@@ -51,7 +51,7 @@ class DashboardController < ApplicationController
 
     end
 
-    render "dashboard/doc_analisys"
+    render "dashboard/doc_analysis"
   end
 
 end
